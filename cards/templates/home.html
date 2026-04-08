@@ -2,12 +2,14 @@
 
 <a href="/create/">Create New Card</a>
 <a href="/image-search/">Image Search</a>
+<!-- displaying cart title and card description-->
 {% for card in cards %}
     <h2>{{ card.title }}</h2>
     <p>{{ card.description }}</p>
     <img src="{{ card.image_url }}" width="200">
 {% endfor %}
-
+<!--Display card image-->
+<!--search for the card and gets url and post deletes the card-->
 <form method="GET" action="/search/">
     <input type="text" name="q" placeholder="Search...">
     <button type="submit">Search</button>

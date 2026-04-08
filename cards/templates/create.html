@@ -1,9 +1,18 @@
 <h1>Create Card</h1>
+<!-- form for creating new knowledge card -->
 
+<!-- post sends data and enctype is for file/image upload-->
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
+<!--input field for card title -->
+
     <input type="text" name="title" placeholder="Title"><br>
+<!--- text area for cart title -->
+
     <textarea name="description"></textarea><br>
+
+<!--text area for card description-->
     <input type="file" name="image"><br>
+<!--submit-->
     <button type="submit">Submit</button>
 </form>

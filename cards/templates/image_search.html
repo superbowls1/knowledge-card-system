@@ -1,22 +1,23 @@
 <h1>Image Search</h1>
 
 <a href="/">Back Home</a>
-
+<!-- returns to home -->
 <br><br>
-
+<!-- form for uploading an image to search-->
+<!-- post is used because a file is being uploaded -->
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="image" required>
     <button type="submit">Search by Image</button>
-</form>
+</form><!-- image upload and submit-->
 
 <hr>
 
-{% for card in cards %}
+{% for card in cards %} <!-- loops through finding the card -->
     <div style="margin-bottom: 25px;">
-        <h2>{{ card.title }}</h2>
-        <p>{{ card.description }}</p>
-        <img src="{{ card.image_url }}" width="200">
+        <h2>{{ card.title }}</h2> <!--display card title-->
+        <p>{{ card.description }}</p> <!--display the description-->
+        <img src="{{ card.image_url }}" width="200"> <!--image-->
     </div>
 {% empty %}
     <p>No matching cards found.</p>
